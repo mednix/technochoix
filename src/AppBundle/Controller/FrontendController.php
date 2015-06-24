@@ -20,7 +20,7 @@ class FrontendController extends Controller
     public function indexAction()
     {
         $articles=$this->get('techno_choix.repository.articles')->trouverTous();
-        $societe=$this->get('techno_choix.repository.societes')->getSociete();
+        $societe=$this->get('techno_choix.repository.societes')->trouverTous();
         $temoignages=$this->get('techno_choix.repository.temoignages')->trouverTous();
         $produits=$this->get('techno_choix.repository.produits')->trouverTous();
 

@@ -17,9 +17,9 @@ class Societes
         $this->repository=$entityManager
             ->getRepository('TechnoChoix:Societe');
     }
-    public function getSociete()
+    public function trouverTous()
     {
         $tous=$this->repository->findAll();
-        return $tous[0];
+        return $tous;
     }
 }

@@ -2,16 +2,18 @@
 use JMS\DiExtraBundle\Annotation as DI;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Doctrine\ORM\EntityManager;
+use TechnoChoix\Visite;
+
 /**
  * @DI\Service
- * @DI\Tag("kernel.event_listener", event="kernel.request", "method"="onKernelRequest"})
+ * @DI\Tag("kernel.event_listener", attributes={"event"="kernel.request", "method"="onKernelRequest"})
  */
 class VisiteListener
 {
     private $em;
     /**
      * @DI\InjectParams({
-     *     "entityManager" = @DI\Inject("doctrine.orm.entity_manager"),
+     *     "em" = @DI\Inject("doctrine.orm.entity_manager"),
      * })
      */
     public function __construct(EntityManager $em){
