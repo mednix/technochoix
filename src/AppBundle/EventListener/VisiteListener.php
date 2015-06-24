@@ -3,8 +3,8 @@ use JMS\DiExtraBundle\Annotation as DI;
 use Symfony\Component\HttpKernel\Event\GetResponseEvent;
 use Doctrine\ORM\EntityManager;
 /**
- * @Service
- * @Tag("kernel.event_listener", event="kernel.request", "method"="onKernelRequest"})
+ * @DI\Service
+ * @DI\Tag("kernel.event_listener", event="kernel.request", "method"="onKernelRequest"})
  */
 class VisiteListener
 {
