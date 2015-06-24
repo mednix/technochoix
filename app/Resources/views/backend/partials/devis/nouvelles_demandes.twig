@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default panel-nouvelles-demandes-devis">
+            <div class="panel-heading">Nouvelles demandes de devis</div>
+            <div class="panel-body">
+                <div class="gallery container-fluid">
+                    <div class="gallery__header row">
+                        
+                        <div class="col-lg-12">
+                            <form class="form-inline" action="">
+                                <div class="form-group">
+                                    <label for="gallery__search">Rechercher: </label>
+                                    <input class="gallery__search form-control" placeholder="..." id="gallery__search" type="text">
+                                </div>
+                                
+                            </form>
+                            
+                        </div>
+                    </div>
+                    <div class="gallery__body row">
+                        <div class="col-lg-12">
+                            <div class="gallery__cell">
+                                                            <div class="card-action well" >
+                                                                <div class="card-action__icon"><span class="glyphicon glyphicon-check"> </span>Astuce</div>
+                                                                <div class="card-action__title">
+                                                                    Marquer Toutes comme prises en charge
+                                                                </div>
+                                                                <div class="card-action__subtitle">
+                                                                    Cliquer sur le bouton Marquer pour indiquer, en un seul coup, que toutes ces demandes de devis ont été prises en compte.
+                                                                </div>
+                                                                <div class="card-action__btn">
+                                                                    <a href="#" class="btn btn-primary btn-lg btn-block">
+                                                                        <span class="glyphicon glyphicon-check"> Marquer
+                                                                    </a>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                        </div>
+                            {% for nouvelle in demandes.nouvelles %}
+
+                                <div class="gallery__cell">
+                                    <div class="box">
+                                        <div class="box-icon">
+                                            <span classs="glyphicon glyphicon-user"></span>
+                                        </div>
+                                        <div class="info">
+                                            <h4 class="text-center">{{nouvelle.getClient().getNom()}}</h4>
+                                            <h5 class="text-center">Tél: {{nouvelle.getClient().getTelephone()}}</h5>
+                                            <h5 class="text-center">Date: {{nouvelle.getDate()|date("d/m/Y à H:i")}}</h5>
+                                            <p>{{nouvelle.getTexte()}}</p>
+                                            <a href="" class="btn"><span class="glyphicon glyphicon-check"></span> Marquer comme prise en charge </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="gallery__footer row">
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+{% extends 'backend/base.twig' %}
+
+{% block body %}
+    {% include 'backend/partials/breadcrumb.twig' with {'section': 'Articles'} %}
+    {% include 'backend/partials/page_heading.twig' with {'heading': 'Gestion des produits'} %}
+    {% include 'backend/partials/produits/liste.twig' %}
+    {% include 'backend/partials/produits/formulaire.twig' %}
+{% endblock %}

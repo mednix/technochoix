@@ -1,0 +1,8 @@
+{% extends 'backend/base.twig' %}
+
+{% block body %}
+    {% include 'backend/partials/breadcrumb.twig' with {'section': 'Société'} %}
+    {% include 'backend/partials/page_heading.twig' with {'heading': 'Informations de la société'} %}
+    {% include 'backend/partials/societe/info.twig' %}
+    {% include 'backend/partials/societe/formulaire.twig' %}
+{% endblock %}

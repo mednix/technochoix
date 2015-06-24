@@ -1,0 +1,25 @@
+ <section id="devis" class="page devis">
+        <div class="callout callout--default">
+            <div class="callout__teaser wow bounceInUp">
+                <div class="heading heading--primary">Demande de devis</div>
+                <div class="paragraph paragraph--default">
+                    Vous pouvez faire une demande de devis en toute simplicité et rapidité par l'intermédiaire d'un formulaire en ligne ou bien faire une demande directe par email ou par téléphone.
+                </div>
+            </div>
+            <div class="callout__action wow bounceInRight">
+                <form class="form form--stacked form--ajax" method="POST" action="{{path('frontend_devis')}}">
+                    <label class="form__label" for="faire_demande_devis_nom">Nom:</label>
+                    <input id="faire_demande_devis_nom" name="nom" type="text" class="form__control" placeholder="Votre Nom">
+                    <label class="form__label" for="faire_demande_devis_telephone">Tél:</label>
+                    <input id="faire_demande_devis_telephone" name="telephone" type="text" class="form__control" placeholder="Votre numéro de téléphone">
+                    <label class="form__label" for="faire_demande_devis_demande">Demande</label>
+                    <textarea id="faire_demande_devis_demande" name="demande"  class="form__control" placeholder="Exprimez votre demande" rows="6"></textarea>
+                    <button name="save" type="submit" class="form__control button button--primary button--medium">
+                        <span class="fa fa-list-alt fa-lg"></span> Envoyer la demande de devis
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        
+    </section>

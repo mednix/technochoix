@@ -1,0 +1,31 @@
+{% extends 'backend/base.twig' %}
+
+{% block body %}
+    {% include 'backend/partials/breadcrumb.twig' with {'section': 'Devis'} %}
+    {% include 'backend/partials/page_heading.twig' with {'heading': 'Gestion des devis'} %}
+    {% include 'backend/partials/devis/nouvelles_demandes.twig' %}
+    {% include 'backend/partials/devis/anciennes_demandes.twig' %}
+{% endblock %}
+{% block javascripts %}
+    {{parent()}}
+    <script type="text/javascript">
+        jQuery(function($){
+            var data=[
+                {% for ancienne in demandes.anciennes%}
+                    {
+                        "nom": "{{ancienne.getClient.getNom()}}",
+                        "telephone": "{{ancienne.getClient().getTelephone()}}",
+                        "date": "{{ancienne.getDate()|date('d/m/Y à H:i')}}",
+                        "texte": "{{ancienne.getTexte()}}"
+                    }
+                    {% if loop.index != loop.length%}
+                        ,
+                    {% endif %}
+                {% endfor %}
+            ];
+            $('#table_anciennes_demandes').bootstrapTable({
+                data: data
+            });
+        });
+    </script>
+{% endblock %}

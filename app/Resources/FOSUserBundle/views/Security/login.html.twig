@@ -1,0 +1,39 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+{% block fos_user_content %}
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+            {% if error %}
+                <div class="alert bg-danger alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <strong class="glyphicon glyphicon-exclamation-sign"></strong> {{ error|trans({}, 'FOSUserBundle') }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">Login</div>
+                <div class="panel-body">
+                    <form action="{{ path("fos_user_security_check") }}" method="post" role="form">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" id="username" name="_username" value="{{ last_username }}" placeholder="Email ou nom d'utilisateur" autofocus="">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Mot de passe" id="password" name="_password"  type="password" value="">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input id="remember_me" name="_remember_me" type="checkbox" checked >Rester connecté(e) très longtemps.
+                                </label>
+                            </div>
+                            <input class="btn btn-primary" type="submit" id="_submit" name="_submit" value="Login" />
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            </div><!-- /.col-->
+            </div><!-- /.row -->
+        {% endblock fos_user_content %}

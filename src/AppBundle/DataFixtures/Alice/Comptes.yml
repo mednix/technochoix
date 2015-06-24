@@ -1,0 +1,19 @@
+TechnoChoix\Compte:
+    compte1:
+        username: admin
+        email: admin@technochoix.com
+        enabled: <boolean(35)>
+        plainPassword: <lexify>
+        roles: [ROLE_ADMIN]
+    compte2:
+        username: mednix
+        email: med.programmer@gmail.com
+        enabled: <boolean(35)>
+        plainPassword: <lexify>
+        roles: [ROLE_USER]
+    compte{3..10}:
+        username (unique) : <userName()>
+        email (unique): 50%?<companyEmail()>
+        enabled: <boolean(35)>
+        plainPassword: <lexify>
+        roles: [ROLE_USER]

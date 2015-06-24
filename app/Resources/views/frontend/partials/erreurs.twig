@@ -1,0 +1,9 @@
+<h1>Erreur</h1>
+Veuiller vérifier les champs du formulaire:
+<ul>
+    {%  for erreur in erreurs %}
+        <li>
+            {{erreur.propertyPath}}: {{erreur.message}}
+        </li>
+    {%  endfor %}
+</ul>
